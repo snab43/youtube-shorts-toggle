@@ -6,14 +6,23 @@
   "description": "Moves YouTube Shorts to a seperate toggle on your subscription page.",
 
   "icons": {
-    "48": "icons/border-48.png",
-    "96": "icons/border-48.png"
+    "48": "icons/icon-48.png",
+    "96": "icons/icon-96.png"
   },
 
   "content_scripts": [
     {
-      "matches": ["*://*.youtube.com/*"],
-      "js": ["src/main.js"]
+      "matches": ["*://*.youtube.com/feed/subscriptions"],
+      "js": ["./src/main.js"],
+      "run_at": "document_idle"
     }
-  ]
+  ],
+
+  "browser_action": {
+    "default_icon":{
+      "48": "icons/icon-96.png"
+    },
+    "default_title": "Toggle YouTube Shorts",
+    "default_popup": "./src/popup.html"
+  }
 }

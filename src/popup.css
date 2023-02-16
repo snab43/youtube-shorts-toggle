@@ -1,0 +1,21 @@
+html {
+    font-family: sans-serif;
+}
+
+.heading {
+    text-align: center;
+}
+
+.heading > h1 {
+    font-size: 1.25rem;
+}
+
+.main {
+    text-align: center;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

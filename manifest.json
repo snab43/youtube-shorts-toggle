@@ -14,6 +14,7 @@
     {
       "matches": ["*://*.youtube.com/feed/subscriptions"],
       "js": ["./src/main.js"],
+      "css": ["./src/styles.css"],
       "run_at": "document_idle"
     }
   ],

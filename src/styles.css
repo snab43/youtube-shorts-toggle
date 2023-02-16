@@ -1,0 +1,30 @@
+/* hover color: #3f3f3f */
+/* background color: #272727 */
+
+#toggle-shorts-buttons-computed {
+    margin-left: 15px;
+    display: flex;
+}
+
+#toggle-videos-button {
+    margin-left: 10px;
+}
+
+#toggle-shorts-button,
+#toggle-videos-button {
+    border-radius: 100px;
+    max-width: 28px;
+    padding: 5px;
+    fill: var(--iron-icon-fill-color, currentcolor);
+    cursor: pointer;
+}
+
+#toggle-shorts-button:hover,
+#toggle-videos-button:hover {
+    background-color: #3f3f3f;
+}
+
+.toggle-button-selected {
+    fill: #000000;
+    background-color: red;
+}

@@ -47,18 +47,30 @@ function waitForElement(selector) {
 
 // Setup the UI
 function setup() {
-	let titleContainer = document.getElementById("title-container");
+	let titleContainer = document.getElementById('title-container');
 
+	// Create the container for both buttons
 	let toggleContainer = document.createElement('div');
-	toggleContainer.classList.add("style-scope", "ytd-shelf-renderer");
-	toggleContainer.innerHTML = `\
-		<div class="style-scope ytd-shelf-renderer" condensed="" has-items="2">\
-			<div id="toggle-shorts-buttons-computed" class="top-level-buttons">\
-				<div id="toggle-shorts-button" class="style-scope ytd-menu-renderer toggle-button-selected" button-rendereer="">${SHORTS_ICON}</div>\
-				<div id="toggle-videos-button" class="style-scope ytd-menu-renderer toggle-button-selected" button-rendereer="">${VIDEOS_ICON}</div>\
-			</div>\
-		</div>\
-	`;
+	toggleContainer.classList.add('style-scope', 'ytd-shelf-renderer');
+	toggleContainer.setAttribute('id', 'toggleContainer');
+
+	// Create the Shorts button
+	let toggleShortsButton = document.createElement('div');
+	toggleShortsButton.classList.add('toggle-button-selected');
+	toggleShortsButton.setAttribute('id', 'toggle-shorts-button');
+	toggleShortsButton.appendChild(SHORTS_ICON);
+
+	// Create the Videos button
+	let toggleVideosButton = document.createElement('div');
+	toggleVideosButton.classList.add('toggle-button-selected');
+	toggleVideosButton.setAttribute('id', 'toggle-videos-button');
+	toggleVideosButton.appendChild(VIDEOS_ICON);
+
+	// Append the buttons to the button container
+	toggleContainer.appendChild(toggleShortsButton);
+	toggleContainer.appendChild(toggleVideosButton);
+
+	// Append to the end of the #title-container
 	titleContainer.appendChild(toggleContainer);
 
 	addListeners();
@@ -66,20 +78,20 @@ function setup() {
 
 function addListeners() {
 	waitForElement('#toggle-shorts-button').then((element) => {
-		let toggleShortsButton = document.getElementById("toggle-shorts-button");
+		let toggleShortsButton = document.getElementById('toggle-shorts-button');
 
 		toggleShortsButton.onclick = () => {
-			toggleShortsButton.classList.toggle("toggle-button-selected");
+			toggleShortsButton.classList.toggle('toggle-button-selected');
 			shortsVisible = !shortsVisible;
 			toggleShorts(shortsVisible);
 		}
 	});
 	
 	waitForElement('#toggle-videos-button').then((element) => {
-		let toggleVideosButton = document.getElementById("toggle-videos-button");
+		let toggleVideosButton = document.getElementById('toggle-videos-button');
 
 		toggleVideosButton.onclick = () => {
-			toggleVideosButton.classList.toggle("toggle-button-selected");
+			toggleVideosButton.classList.toggle('toggle-button-selected');
 			videosVisible = !videosVisible;
 			toggleVideos(videosVisible);
 		}
@@ -95,13 +107,13 @@ function toggleShorts(shortsVisible) {
 	elements.forEach(element => {
     if ((element.tagName.toLowerCase().match(SHELF_TAG_REGEX) 
       && element.innerHTML.search(SHELF_ITEM_TAG_REGEX) != -1) 
-      || element.innerHTML.search("href=\"/shorts/") != -1)
+      || element.innerHTML.search('href="/shorts/') != -1)
     {
       if (!shortsVisible) {
-        element.setAttribute("hidden", true);
+        element.setAttribute('hidden', true);
       }
-      else if (element.hasAttribute("hidden")) {
-        element.removeAttribute("hidden");
+      else if (element.hasAttribute('hidden')) {
+        element.removeAttribute('hidden');
       }
     }
   });
@@ -116,13 +128,13 @@ function toggleVideos(videosVisible) {
 	elements.forEach(element => {
     if ((element.tagName.toLowerCase().match(SHELF_TAG_REGEX) 
       && element.innerHTML.search(SHELF_ITEM_TAG_REGEX) != -1) 
-      || element.innerHTML.search("href=\"/watch") != -1)
+      || element.innerHTML.search('href="/watch') != -1)
     {
       if (!videosVisible) {
-        element.setAttribute("hidden", true);
+        element.setAttribute('hidden', true);
       }
-      else if (element.hasAttribute("hidden")) {
-        element.removeAttribute("hidden");
+      else if (element.hasAttribute('hidden')) {
+        element.removeAttribute('hidden');
       }
     }
   });

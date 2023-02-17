@@ -32,10 +32,20 @@ function setup() {
 	let toggleOnlyMode, shortsVisible, videosVisible;
 
     browser.storage.local.get(null, function(result) {
+		// Sets default expected values if null
         result.toggleOnlyMode == null ? toggleOnlyMode = false : toggleOnlyMode = result.toggleOnlyMode;
 		result.shortsVisible == null ? shortsVisible = false : shortsVisible = result.shortsVisible;
 		result.videosVisible == null ? videosVisible = true : videosVisible = result.videosVisible;
 
+		// Failsafe for two broken modes:
+		// 1. Shorts off, Videos off
+		// 2. Shorts on, Videos on, Toggle Only Mode on
+		if ((!shortsVisible && !videosVisible) || (shortsVisible && videosVisible && toggleOnlyMode)) {
+			shortsVisible = false;
+			videosVisible = true;
+		}
+
+		// Save values
 		browser.storage.local.set({
 			toggleOnlyMode: toggleOnlyMode,
 			shortsVisible: shortsVisible,
@@ -103,7 +113,7 @@ function toggleShorts(e) {
 		shortsVisible = !shortsVisible;
 		toggleItems('href="/shorts/', shortsVisible);
 
-		if ((!shortsVisible && !videosVisible) || (!shortsVisible && result.toggleOnlyMode)) {
+		if ((!shortsVisible && !videosVisible) || (shortsVisible && videosVisible && result.toggleOnlyMode)) {
 			let toggleVideosButton = document.getElementById('toggle-videos-button');
 			toggleVideosButton.classList.toggle('toggle-button-selected');
 			videosVisible = !videosVisible;
@@ -127,7 +137,7 @@ function toggleVideos(e) {
 		videosVisible = !videosVisible;
 		toggleItems('href="/watch', videosVisible);
 
-		if ((!shortsVisible && !videosVisible) || (!videosVisible && result.toggleOnlyMode)) {
+		if ((!shortsVisible && !videosVisible) || (shortsVisible && videosVisible && result.toggleOnlyMode)) {
 			let toggleShortsButton = document.getElementById('toggle-shorts-button');
 			toggleShortsButton.classList.toggle('toggle-button-selected');
 			shortsVisible = !shortsVisible;

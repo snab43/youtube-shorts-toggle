@@ -6,10 +6,22 @@
 
 ## Getting Started
 
-You can install the add-on for Mozilla Firefox on the [Firefox Add-on page](https://addons.mozilla.org/en-US/firefox/addon/youtube-subscription-toggle/). Google Chrome is currently not supported.
+### Mozilla Firefox
+
+You can install the add-on for Mozilla Firefox on the [Firefox Add-on page](https://addons.mozilla.org/en-US/firefox/addon/youtube-subscription-toggle/).
+
+### Google Chrome
+
+Google Chrome is currently not supported.
+
+### Safari
+
+Safari is currently not supported.
 
 ## About
 This extension was created as an informal fork of [hide-youtube-shorts](https://github.com/Vulpelo/hide-youtube-shorts/) by [Vulpelo](https://github.com/Vulpelo). However, instead of hiding shorts site-wide, it adds a toggle to hide Shorts and regular Videos on the Subscription page only.
+
+**Toggle Only Mode:** This setting does not allow Shorts and Videos to display at the same time. Effectively creating two seperate feeds for your Subscriptions.
 
 ## Built With
 
@@ -17,11 +29,21 @@ HTML, CSS, and pure JavaScript. :)
 
 ## Roadmap
 
+### Version 1.0
+
 - [X] Initial commit
 - [X] Basic functionality
-- [ ] Clean up code
-- [ ] Remember toggle status in local storage
 - [X] Publish on Firefox's Add-ons page
+
+### Version 1.1
+
+- [X] Remember toggle status in local storage
+- [X] Toggle Only Mode
+
+### Future Versions
+
+- [ ] Newly loaded videos adhere to the visibility rules
+- [ ] Clean up code
 - [ ] Google Chrome compatibility
 
 ## Screenshots

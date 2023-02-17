@@ -1,9 +1,9 @@
 {
   "manifest_version": 2,
-  "name": "YouTube Shorts Toggle",
-  "version": "1.0",
+  "name": "YouTube Subscription Toggle",
+  "version": "1.0.1",
 
-  "description": "Moves YouTube Shorts to a seperate toggle on your subscription page.",
+  "description": "Allows you to toggle YouTube Shorts and Videos visibility from your YouTube subscription page.",
 
   "icons": {
     "48": "icons/icon-48.png",
@@ -23,7 +23,7 @@
     "default_icon":{
       "96": "icons/icon-96.png"
     },
-    "default_title": "Toggle YouTube Shorts",
+    "default_title": "YouTube Subscription Toggle",
     "default_popup": "./src/popup.html"
   }
 }

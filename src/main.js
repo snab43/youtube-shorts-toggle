@@ -71,6 +71,13 @@ function addListeners() {
 			toggleShortsButton.classList.toggle('toggle-button-selected');
 			shortsVisible = !shortsVisible;
 			toggleItems('href="/shorts/', shortsVisible);
+
+			if (!videosVisible) {
+				let toggleVideosButton = document.getElementById('toggle-videos-button');
+				toggleVideosButton.classList.toggle('toggle-button-selected');
+				videosVisible = !videosVisible;
+				toggleItems('href="/watch', videosVisible);
+			}
 		}
 	});
 	
@@ -81,6 +88,13 @@ function addListeners() {
 			toggleVideosButton.classList.toggle('toggle-button-selected');
 			videosVisible = !videosVisible;
 			toggleItems('href="/watch', videosVisible);
+
+			if (!shortsVisible) {
+				let toggleShortsButton = document.getElementById('toggle-shorts-button');
+				toggleShortsButton.classList.toggle('toggle-button-selected');
+				shortsVisible = !shortsVisible;
+				toggleItems('href="/shorts/', shortsVisible);
+			}
 		}
 	});
 }

@@ -4,6 +4,11 @@
     <img src="https://github.com/snab43/youtube-shorts-toggle/blob/develop/icons/icon-96.png?raw=true">
 </div>
 
+## About
+This extension was created as an informal fork of [hide-youtube-shorts](https://github.com/Vulpelo/hide-youtube-shorts/) by [Vulpelo](https://github.com/Vulpelo). However, instead of hiding shorts site-wide, it adds a toggle to hide Shorts and regular Videos on the Subscription page only.
+
+**Toggle Only Mode:** This setting does not allow Shorts and Videos to display at the same time. Effectively creating two seperate feeds for your Subscriptions.
+
 ## Getting Started
 
 ### Mozilla Firefox
@@ -17,11 +22,6 @@ Google Chrome is currently not supported.
 ### Safari
 
 Safari is currently not supported.
-
-## About
-This extension was created as an informal fork of [hide-youtube-shorts](https://github.com/Vulpelo/hide-youtube-shorts/) by [Vulpelo](https://github.com/Vulpelo). However, instead of hiding shorts site-wide, it adds a toggle to hide Shorts and regular Videos on the Subscription page only.
-
-**Toggle Only Mode:** This setting does not allow Shorts and Videos to display at the same time. Effectively creating two seperate feeds for your Subscriptions.
 
 ## Built With
 

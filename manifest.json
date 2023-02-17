@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "YouTube Subscription Toggle",
-  "version": "1.0.1",
+  "version": "1.0.2",
 
   "description": "Allows you to toggle YouTube Shorts and Videos visibility from your YouTube subscription page.",
 
@@ -21,9 +21,19 @@
 
   "browser_action": {
     "default_icon":{
+      "48": "icons/icon-48.png",
       "96": "icons/icon-96.png"
     },
     "default_title": "YouTube Subscription Toggle",
-    "default_popup": "./src/popup.html"
+    "default_popup": "./src/popup.html",
+    "theme_icons": [{
+      "light": "icons/icon-48-white.png",
+      "dark": "icons/icon-48.png",
+      "size": 48
+    }, {
+      "light": "icons/icon-96-white.png",
+      "dark": "icons/icon-96.png",
+      "size": 96
+    }]
   }
 }

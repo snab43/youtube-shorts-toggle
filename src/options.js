@@ -1,5 +1,5 @@
 window.onload = () => {
     // Adds version
-    let manifestData = chrome.runtime.getManifest();
+    let manifestData = browser.runtime.getManifest();
     document.getElementById("version").textContent = "Version " + manifestData.version;
 }

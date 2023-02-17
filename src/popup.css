@@ -1,5 +1,12 @@
 html {
-    font-family: sans-serif;
+    font-family: Helvetica, sans-serif;
+    color: #f1f1f1;
+    background-color: #1c1b22;
+}
+
+body {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
 }
 
 .heading {
@@ -11,11 +18,29 @@ html {
 }
 
 .main {
+    background-color: #2b2a33;
     text-align: center;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    margin-top: 1rem;
 }
 
 .footer {
+    font-size: 0.8rem;
+    color: #c5c5c5;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-top: 1rem;
+}
+
+.github-icon {
+    padding: 5px 5px 1px 5px;
+    border-radius: 100%;
+    transition: background-color 0.5s ease;
+}
+
+.github-icon:hover {
+    background-color: #35343a;
+    transition: background-color 0.5s ease;
 }

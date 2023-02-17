@@ -1,30 +1,28 @@
-/* hover color: #3f3f3f */
-/* background color: #272727 */
-
-#toggle-shorts-buttons-computed {
+#toggleContainer {
     margin-left: 15px;
     display: flex;
 }
 
 #toggle-videos-button {
-    margin-left: 10px;
+    margin-left: 12px;
 }
 
 #toggle-shorts-button,
 #toggle-videos-button {
+    font-size: 14px;
+    font-weight: 700;
     border-radius: 100px;
-    max-width: 28px;
-    padding: 5px;
-    fill: var(--iron-icon-fill-color, currentcolor);
+    padding: 8px 15px;
     cursor: pointer;
 }
 
 #toggle-shorts-button:hover,
 #toggle-videos-button:hover {
+    color: #f1f1f1;
     background-color: #3f3f3f;
 }
 
 .toggle-button-selected {
-    fill: #000000;
-    background-color: red;
+    color: #0f0f0f;
+    background-color: #f1f1f1;
 }
